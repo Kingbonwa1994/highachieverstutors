@@ -3,70 +3,70 @@ import React from 'react';
 
 const topicsinfo = [
   {
-    topicname: "Patterns & Sequences and Series",
-    imagesrc: "/maths.svg",
+    topicname: "Patterns And Series",
+    imagesrc: "/patterns.svg",
     subjectpage: "maths",
     buttontext: "open"
   },
   {
-    topicname: "Functions and Inverse Functions",
-    imagesrc: "physics.svg",
+    topicname: "Functions & Inverse",
+    imagesrc: "/functions.svg",
     subjectpage: "physics",
     buttontext: "open"
   },
   {
-    topicname: "Exponential and Logarithmic Functions",
-    imagesrc: "/lifescience.svg",
+    topicname: "Exponential & Logs",
+    imagesrc: "/log.svg",
     subjectpage: "lifescience",
     buttontext: "open"
   },
   {
-    topicname: "Finance, Growth and Decay",
-    imagesrc: "accounting.svg",
+    topicname: "Finance, Growth & .",
+    imagesrc: "/finance.svg",
     subjectpage: "accounting",
     buttontext: "open"
   },
   {
-    topicname: "Trigonometry: Compound and Decay",
-    imagesrc: "coding.svg",
+    topicname: "Trig: Double Angles",
+    imagesrc: "/trigo.svg",
     subjectpage: "coding",
     buttontext: "open"
   },
   {
-    topicname: "Trigonometry: Problem Solving in 2 & 3D Polynomials",
-    imagesrc: "/maths.svg",
+    topicname: "Trig: 3-Dimensions",
+    imagesrc: "/trig1.svg",
     subjectpage: "maths",
     buttontext: "open"
   },
   {
     topicname: "Differential Calculus",
-    imagesrc: "physics.svg",
+    imagesrc: "/calculus.svg",
     subjectpage: "physics",
     buttontext: "open"
   },
   {
     topicname: "Analytical Geometry",
-    imagesrc: "/lifescience.svg",
+    imagesrc: "/analytics.svg",
     subjectpage: "lifescience",
     buttontext: "open"
   },
   {
     topicname: "Euclidean Geometry",
-    imagesrc: "accounting.svg",
+    imagesrc: "/euclid.svg",
     subjectpage: "accounting",
     buttontext: "open"
   },
   {
-    topicname: "Statistics",
-    imagesrc: "coding.svg",
+    topicname: "Statistics & Applied",
+    imagesrc: "/statistics.svg",
     subjectpage: "coding",
     buttontext: "open"
   },
   {
     topicname: "Counting & Probability",
-    imagesrc: "coding.svg",
+    imagesrc: "probability.svg",
     subjectpage: "coding",
-    buttontext: "open"
+    buttontext: "Send"
   }
 ];
 
@@ -76,12 +76,12 @@ function Page() {
     <div className='flex flex-col items-center pt-4 h-screen'>
       <div className='text-center text-2xl'>Maths Mastery by Topic</div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
-      {topicsinfo.map(subject => (
+      {topicsinfo.map(topic => (
         <BackgroundGradientDemo
-          key={subject.topicname}
-          subjectname={subject.topicname}
-          subjectpage={subject.subjectpage}  
-          buttontext={subject.buttontext}     
+          key={topic.topicname}
+          subjectname={topic.topicname}
+          imagesrc={topic.imagesrc}
+          subjectpage={topic.subjectpage}     
         />
       ))}
       </div>

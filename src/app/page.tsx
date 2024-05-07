@@ -2,7 +2,7 @@ import { BackgroundGradientDemo } from "@/components/ui/subject-card";
 
 const subjectsinfo = [
   {
-    subjectname: "Maths",
+    subjectname: "Pure Mathematics",
     imagesrc: "/maths.svg",
     subjectpage: "maths"
   },
@@ -12,17 +12,17 @@ const subjectsinfo = [
     subjectpage: "physics"
   },
   {
-    subjectname: "Life Sciences",
+    subjectname: "Life/Bio Sciences",
     imagesrc: "/lifescience.svg",
     subjectpage: "lifescience"
   },
   {
-    subjectname: "Accounting",
+    subjectname: "Accounting & Fin",
     imagesrc: "accounting.svg",
     subjectpage: "accounting"
   },
   {
-    subjectname: "Coding",
+    subjectname: "Coding & Design",
     imagesrc: "coding.svg",
     subjectpage: "coding"
   }
@@ -31,8 +31,8 @@ const subjectsinfo = [
 
 export default function Home() {
   return (
-    <main className="h-screen flex-col bg-background items-center justify-between px-24 py-12">
-      <h1 className=" text-3xl">High Achivers Tutors</h1>
+    <main className="h-screen flex flex-col mt-16 bg-background justify-center items-center  px-24 py-12">
+      <p className="mt-16 text-3xl sm:mt-16  text-teal-300 text-clip text-balance">High Achivers Tutors</p>
       {subjectsinfo.map(subject => (
         <BackgroundGradientDemo
           key={subject.subjectname}
