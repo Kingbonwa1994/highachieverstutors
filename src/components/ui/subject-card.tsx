@@ -23,7 +23,7 @@ export const SubjectCard: React.FC<SubjectCardProps> = ({
 
 
     const router = useRouter()
-  const handleClick = () => {
+    const handleClick = () => {
     setSelectedSubject(subjectName);
     setSelectedTopic('')
      router.push(subjectPage)

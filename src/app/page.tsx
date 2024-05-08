@@ -1,6 +1,7 @@
 "use client"
 import { SubjectCard } from "@/components/ui/subject-card";
 import { useTutorClassesStore } from "@/store/index"
+import { useRouter } from "next/navigation";
 
 const subjectsinfo = [
   {
@@ -28,9 +29,11 @@ const subjectsinfo = [
 
 export default function Home() {
   const { selectedSubject, setSelectedSubject } = useTutorClassesStore()
+  const router = useRouter()
   
-  const handleSubjectClick = (selectedSubject: string) => {
-    setSelectedSubject(selectedSubject)
+  const handleSubjectClick = (subject: string) => {
+    setSelectedSubject(subject)
+    router.push(`/${subject}`)
   }
 
   return (
@@ -42,7 +45,7 @@ export default function Home() {
           subjectName={subject.subjectname}          
           imageSrc={subject.imagesrc}
           subjectPage={subject.subjectpage}   
-          onClick={() => handleSubjectClick(subject.subjectname)}    
+          onClick={() => handleSubjectClick(subject.subjectpage)}    
         />
       ))}
     </main>
