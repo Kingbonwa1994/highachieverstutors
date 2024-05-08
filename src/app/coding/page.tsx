@@ -1,5 +1,7 @@
 import { SubjectCard } from '@/components/ui/subject-card';
 import React from 'react';
+import { useTutorClassesStore } from "@/store/index"
+import composeWhatsAppMessage from '@/components/send-whatsapp';
 
 const topicsinfo = [
   {
@@ -67,7 +69,12 @@ const topicsinfo = [
 
 function Page() {
   
-  
+  const { selectedSubject, setSelectedTopic } = useTutorClassesStore();
+  const handleTopicClick = (topic: string) => {
+    setSelectedTopic(topic);
+    const whatsappUrl = composeWhatsAppMessage(selectedSubject, topic);
+    window.location.href = whatsappUrl; 
+  };
   return (
     <div className='flex flex-col items-center pt-4 h-screen'>
       <div className='text-center text-2xl'>Physical Sciences Mastery</div>
@@ -78,6 +85,7 @@ function Page() {
           subjectName={topic.topicname}
           imageSrc={topic.imagesrc}
           subjectPage={topic.subjectpage}     
+          onClick={() => handleTopicClick(topic.topicname)}  
         />
       ))}
       </div>

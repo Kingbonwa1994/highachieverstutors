@@ -81,7 +81,7 @@ function Page() {
   const handleTopicClick = (topic: string) => {
     setSelectedTopic(topic);
     const whatsappUrl = composeWhatsAppMessage(selectedSubject, topic);
-    window.location.href = whatsappUrl; // Update state with selected topic
+    window.location.href = whatsappUrl; 
   };
 
   return (
