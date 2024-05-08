@@ -1,3 +1,4 @@
+"use client"
 import { SubjectCard } from '@/components/ui/subject-card';
 import React from 'react';
 import { useTutorClassesStore } from "@/store/index"
