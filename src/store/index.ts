@@ -1,4 +1,4 @@
-import create from 'zustand';
+import {create} from 'zustand';
 
 interface SubjectStore {
   selectedSubject: string;
@@ -7,7 +7,7 @@ interface SubjectStore {
   setSelectedTopic: (topic: string) => void;
 }
 
-export const useSubjectStore = create<SubjectStore>((set) => ({
+export const useTutorClassesStore = create<SubjectStore>((set) => ({
   selectedSubject: '',
   selectedTopic: '',
   setSelectedSubject: (subject) => set({ selectedSubject: subject }),

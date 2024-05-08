@@ -1,4 +1,6 @@
+"use client"
 import { SubjectCard } from "@/components/ui/subject-card";
+import { useTutorClassesStore } from "@/store/index"
 
 const subjectsinfo = [
   {
@@ -17,11 +19,6 @@ const subjectsinfo = [
     subjectpage: "lifescience"
   },
   {
-    subjectname: "Accounting & Fin",
-    imagesrc: "accounting.svg",
-    subjectpage: "accounting"
-  },
-  {
     subjectname: "Coding & Design",
     imagesrc: "coding.svg",
     subjectpage: "coding"
@@ -30,16 +27,22 @@ const subjectsinfo = [
 
 
 export default function Home() {
+  const { selectedSubject, setSelectedSubject } = useTutorClassesStore()
+  
+  const handleSubjectClick = (selectedSubject: string) => {
+    setSelectedSubject(selectedSubject)
+  }
+
   return (
     <main className="h-screen flex flex-col mt-16 bg-background justify-center items-center  px-24 py-12">
       <p className="mt-16 text-3xl sm:mt-16  text-teal-300 text-clip text-balance">High Achivers Tutors</p>
       {subjectsinfo.map(subject => (
         <SubjectCard
-        
           key={subject.subjectname}
           subjectName={subject.subjectname}          
           imageSrc={subject.imagesrc}
-          subjectPage={subject.subjectpage}       
+          subjectPage={subject.subjectpage}   
+          onClick={() => handleSubjectClick(subject.subjectname)}    
         />
       ))}
     </main>

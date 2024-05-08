@@ -1,70 +1,74 @@
+"use client"
 import { SubjectCard } from '@/components/ui/subject-card';
 import React from 'react';
+import { useTutorClassesStore } from "@/store/index"
+import composeWhatsAppMessage from '@/components/send-whatsapp';
+
 
 const topicsinfo = [
   {
     topicname: "Patterns And Series",
-    imagesrc: "/patterns.svg",
+    imagesrc: "/maths/patterns.svg",
     subjectpage: "maths",
     buttontext: "open"
   },
   {
     topicname: "Functions & Inverse",
-    imagesrc: "/functions.svg",
+    imagesrc: "/maths/functions.svg",
     subjectpage: "physics",
     buttontext: "open"
   },
   {
     topicname: "Exponential & Logs",
-    imagesrc: "/log.svg",
+    imagesrc: "/maths/log.svg",
     subjectpage: "lifescience",
     buttontext: "open"
   },
   {
     topicname: "Finance, Growth & .",
-    imagesrc: "/finance.svg",
+    imagesrc: "/maths/finance.svg",
     subjectpage: "accounting",
     buttontext: "open"
   },
   {
     topicname: "Trig: Double Angles",
-    imagesrc: "/trigo.svg",
+    imagesrc: "/maths/trigo.svg",
     subjectpage: "coding",
     buttontext: "open"
   },
   {
     topicname: "Trig: 3-Dimensions",
-    imagesrc: "/trig1.svg",
+    imagesrc: "/maths/trig1.svg",
     subjectpage: "maths",
     buttontext: "open"
   },
   {
     topicname: "Differential Calculus",
-    imagesrc: "/calculus.svg",
+    imagesrc: "/maths/calculus.svg",
     subjectpage: "physics",
     buttontext: "open"
   },
   {
     topicname: "Analytical Geometry",
-    imagesrc: "/analytics.svg",
+    imagesrc: "/maths/analytics.svg",
     subjectpage: "lifescience",
     buttontext: "open"
   },
   {
     topicname: "Euclidean Geometry",
-    imagesrc: "/euclid.svg",
+    imagesrc: "/maths/euclid.svg",
     subjectpage: "accounting",
     buttontext: "open"
   },
   {
     topicname: "Statistics & Applied",
-    imagesrc: "/statistics.svg",
+    imagesrc: "/maths/statistics.svg",
     subjectpage: "coding",
     buttontext: "open"
   },
   {
-    topicname: "Counting & Probabili",
-    imagesrc: "probability.svg",
+    topicname: "Counting & Probabil",
+    imagesrc: "/maths/probability.svg",
     subjectpage: "coding",
     buttontext: "Send"
   }
@@ -73,7 +77,13 @@ const topicsinfo = [
 
 function Page() {
   
-  
+  const { selectedSubject, setSelectedTopic } = useTutorClassesStore();
+  const handleTopicClick = (topic: string) => {
+    setSelectedTopic(topic);
+    const whatsappUrl = composeWhatsAppMessage(selectedSubject, topic);
+    window.location.href = whatsappUrl; // Update state with selected topic
+  };
+
   return (
     <div className='flex flex-col items-center pt-4 h-screen'>
       <div className='text-center text-2xl'>Maths Mastery by Topic</div>
@@ -83,7 +93,8 @@ function Page() {
           key={topic.topicname}
           subjectName={topic.topicname}
           imageSrc={topic.imagesrc}
-          subjectPage={topic.subjectpage}     
+          subjectPage={topic.subjectpage}  
+          onClick={() => handleTopicClick(topic.topicname)}  
         />
       ))}
       </div>
