@@ -1,4 +1,4 @@
-import { BackgroundGradientDemo } from '@/components/ui/subject-card';
+import { SubjectCard } from '@/components/ui/subject-card';
 import React from 'react';
 
 const topicsinfo = [
@@ -63,7 +63,7 @@ const topicsinfo = [
     buttontext: "open"
   },
   {
-    topicname: "Counting & Probability",
+    topicname: "Counting & Probabili",
     imagesrc: "probability.svg",
     subjectpage: "coding",
     buttontext: "Send"
@@ -72,16 +72,18 @@ const topicsinfo = [
 
 
 function Page() {
+  
+  
   return (
     <div className='flex flex-col items-center pt-4 h-screen'>
       <div className='text-center text-2xl'>Maths Mastery by Topic</div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
       {topicsinfo.map(topic => (
-        <BackgroundGradientDemo
+        <SubjectCard
           key={topic.topicname}
-          subjectname={topic.topicname}
-          imagesrc={topic.imagesrc}
-          subjectpage={topic.subjectpage}     
+          subjectName={topic.topicname}
+          imageSrc={topic.imagesrc}
+          subjectPage={topic.subjectpage}     
         />
       ))}
       </div>

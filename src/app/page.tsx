@@ -1,4 +1,4 @@
-import { BackgroundGradientDemo } from "@/components/ui/subject-card";
+import { SubjectCard } from "@/components/ui/subject-card";
 
 const subjectsinfo = [
   {
@@ -34,11 +34,12 @@ export default function Home() {
     <main className="h-screen flex flex-col mt-16 bg-background justify-center items-center  px-24 py-12">
       <p className="mt-16 text-3xl sm:mt-16  text-teal-300 text-clip text-balance">High Achivers Tutors</p>
       {subjectsinfo.map(subject => (
-        <BackgroundGradientDemo
+        <SubjectCard
+        
           key={subject.subjectname}
-          subjectname={subject.subjectname} 
-          imagesrc={subject.imagesrc}
-          subjectpage={subject.subjectpage}       
+          subjectName={subject.subjectname}          
+          imageSrc={subject.imagesrc}
+          subjectPage={subject.subjectpage}       
         />
       ))}
     </main>
