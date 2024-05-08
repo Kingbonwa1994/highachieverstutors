@@ -67,7 +67,7 @@ const topicsinfo = [
 ];
 
 
-function Page() {
+export default function LifeScience() {
   
   const { selectedSubject, setSelectedTopic } = useTutorClassesStore();
   const handleTopicClick = (topic: string) => {
@@ -77,7 +77,7 @@ function Page() {
   };
   return (
     <div className='flex flex-col items-center pt-4 h-screen'>
-      <div className='text-center text-2xl'>Physical Sciences Mastery</div>
+      <div className='text-center text-2xl'>Life Sciences Mastery</div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
       {topicsinfo.map(topic => (
         <SubjectCard
@@ -94,4 +94,3 @@ function Page() {
   );
 }
 
-export default Page;

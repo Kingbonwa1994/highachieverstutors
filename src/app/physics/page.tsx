@@ -74,7 +74,7 @@ const topicsinfo = [
 ];
 
 
-function Page() {
+export default function Page() {
   
   const { selectedSubject, setSelectedTopic } = useTutorClassesStore();
   const handleTopicClick = (topic: string) => {
@@ -100,5 +100,3 @@ function Page() {
     </div>
   );
 }
-
-export default Page;
