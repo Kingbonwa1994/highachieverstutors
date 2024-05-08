@@ -3,43 +3,43 @@ import React from 'react';
 
 const topicsinfo = [
   {
-    topicname: "Design, Icons & Prototype",
+    topicname: "Design, Icons",
     imagesrc: "/code/figma.svg",
     subjectpage: "maths",
     buttontext: "open"
   },
   {
-    topicname: "HTML-Web block",
+    topicname: " - Web block",
     imagesrc: "/code/html.svg",
     subjectpage: "physics",
     buttontext: "open"
   },
   {
-    topicname: "CSS-TailwindCSS",
+    topicname: "TailwindCSS",
     imagesrc: "/code/tailwindcss.svg",
     subjectpage: "lifescience",
     buttontext: "open"
   },
   {
-    topicname: "TypeScript",
+    topicname: "TypeScript.ts",
     imagesrc: "/code/typescript.svg",
     subjectpage: "accounting",
     buttontext: "open"
   },
   {
-    topicname: "React",
+    topicname: "React.tsx/.jsx",
     imagesrc: "/code/react.svg",
     subjectpage: "coding",
     buttontext: "open"
   },
   {
-    topicname: "Node.js",
+    topicname: "- Talk to DB",
     imagesrc: "/code/node.svg",
     subjectpage: "maths",
     buttontext: "open"
   },
   {
-    topicname: "Express.js",
+    topicname: " *Spin Server",
     imagesrc: "/code/express.svg",
     subjectpage: "physics",
     buttontext: "open"
@@ -51,13 +51,13 @@ const topicsinfo = [
     buttontext: "open"
   },
   {
-    topicname: "DBs - MongoDB",
+    topicname: "- MongoDB",
     imagesrc: "/code/mongodb.svg",
     subjectpage: "accounting",
     buttontext: "open"
   },
   {
-    topicname: "Production App",
+    topicname: "FullStack ",
     imagesrc: "/code/next.svg",
     subjectpage: "coding",
     buttontext: "open"
